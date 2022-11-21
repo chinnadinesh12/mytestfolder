@@ -2,6 +2,10 @@ output "vpc_id" {
     value = aws_vpc.office_vpc.id
 }
 
+output "vpc_cidr_block" {
+    value = aws_vpc.office_vpc.cidr_block
+}
+
 output "IGW" {
    value = aws_internet_gateway.office_igw.id
 }
@@ -12,4 +16,16 @@ output "Public-subnet" {
 
 output "Private-subnet" {
     value = aws_subnet.Private-subnet[*].id
+}
+
+output "Database-subnet" {
+    value = aws_subnet.Database-subnet[*].id
+}
+
+output "aws_Public_rt" {
+    value = aws_route_table.Public_rt.id
+}
+
+output "aws_Private_rt" {
+    value = aws_route_table.Private_rt.id
 }
