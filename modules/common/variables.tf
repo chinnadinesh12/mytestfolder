@@ -7,13 +7,13 @@ variable "name" {
 variable "access_key" {
     description = "Name"
     type = string
-    default = "AKIA5SLG4Q6YI5S2Q2J3"
+    default = ""
 }
 
 variable "secret_key" {
     description = "Name"
     type = string
-    default = "iwYRmkuzeDnB7JeKzm8AnMniCkHN7+VAr9dKx5P9"
+    default = ""
 }
 
 variable "Environment" {
