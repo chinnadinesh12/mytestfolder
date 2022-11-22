@@ -4,6 +4,18 @@ variable "name" {
     default = "myoffice"
 }
 
+variable "access_key" {
+    description = "Name"
+    type = string
+    default = ""
+}
+
+variable "secret_key" {
+    description = "Name"
+    type = string
+    default = ""
+}
+
 variable "Environment" {
     description = "working ENV"
     type = string
