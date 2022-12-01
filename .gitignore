@@ -4,3 +4,13 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
+<<<<<<< HEAD
+=======
+
+# Crash log files
+crash.log
+
+# Access key credentials
+accesskey
+*accesskey.tf.*
+>>>>>>> 01077ba79fd3427e302748f3154a4e285a4f0820
