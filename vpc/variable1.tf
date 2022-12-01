@@ -4,17 +4,6 @@ variable "name" {
     default = "myoffice"
 }
 
-variable "access_key" {
-    description = "Name"
-    type = string
-    default = ""
-}
-
-variable "secret_key" {
-    description = "Name"
-    type = string
-    default = ""
-}
 
 variable "Environment" {
     description = "working ENV"
@@ -36,7 +25,7 @@ variable "Public_subnet_CIDR_block" {
 }
 
 variable "Public_subnet_AZS" {
-    description = "public subnet AZS"
+    description = "Public subnet AZS"
     type = list(string)
     default = ["us-east-1a", "us-east-1b"]
 }
@@ -48,7 +37,7 @@ variable "Private_subnet_CIDR_block" {
 }
 
 variable "Private_subnet_AZS" {
-    description = "private subnet AZS"
+    description = "Private subnet AZS"
     type = list(string)
     default = ["us-east-1a", "us-east-1b"]
 }
