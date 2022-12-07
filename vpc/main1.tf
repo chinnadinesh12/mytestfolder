@@ -6,10 +6,19 @@
 #    }
 #  }
 #}
+# S3 Backup for .tfstate #
+terraform {
+  backend "s3" {
+    bucket = "vaibhav-tfstate"
+    key    = "vpc/terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-2"
+  region = "us-east-1"
   alias  = "use1"
   access_key = "${var.access_key}"
   secret_key = "${var.secret_key}"
