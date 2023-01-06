@@ -2,7 +2,7 @@
 # S3 Backup for .tfstate #
 terraform {
   backend "s3" {
-    bucket = "vaibhav-tfstate"
+    bucket = "vaibhav-bucket01"
     key    = "common/terraform.tfstate"
     region = "us-east-1"
   }
@@ -64,20 +64,20 @@ resource "aws_subnet" "Private-subnet" {
   )
 }
 
-# # Create Database Subnet #
-# resource "aws_subnet" "Database-subnet" {
-#   vpc_id            = aws_vpc.office_vpc.id
-#   count             = length(var.Database_subnet_CIDR_block)
-#   cidr_block        = element(var.Database_subnet_CIDR_block, count.index)
-#   availability_zone = element(var.Database_subnet_AZS, count.index)
+# Create Database Subnet #
+resource "aws_subnet" "Database-subnet" {
+  vpc_id            = aws_vpc.office_vpc.id
+  count             = length(var.Database_subnet_CIDR_block)
+  cidr_block        = element(var.Database_subnet_CIDR_block, count.index)
+  availability_zone = element(var.Database_subnet_AZS, count.index)
 
-#   tags = merge(
-#     {
-#       Name        = "${var.name}-Database-subnet"
-#       Environment = "${var.Environment}"
-#     }
-#   )
-# }
+  tags = merge(
+    {
+      Name        = "${var.name}-Database-subnet"
+      Environment = "${var.Environment}"
+    }
+  )
+}
 
 # Create new routing table without internet access for instances
 data "aws_availability_zones" "available" {}
@@ -130,17 +130,17 @@ resource "aws_route_table_association" "private_rt" {
 ## till hear working ##
 ##################################################################################################
 
-# resource "aws_db_subnet_group" "Database-group" {
-#   name       = "main"
-#   subnet_ids = aws_subnet.Database-subnet.*.id
+resource "aws_db_subnet_group" "Database-group" {
+  name       = "main"
+  subnet_ids = aws_subnet.Database-subnet.*.id
 
-#   tags = merge(
-#     {
-#       Name        = "${var.name}-Database-group",
-#       Environment = "${var.Environment}"
-#     }
-#   )
-# }
+  tags = merge(
+    {
+      Name        = "${var.name}-Database-group",
+      Environment = "${var.Environment}"
+    }
+  )
+}
 
 # Create an NAT gateway to give our private subnet access the outside world 
 # resource "aws_eip" "nat" {
@@ -165,4 +165,4 @@ resource "aws_route_table_association" "private_rt" {
 #   nat_gateway_id         = aws_nat_gateway.ngw_id.id
 #   depends_on             = [aws_route_table_association.private_rt]
 # }
-###############################
+# ##############################

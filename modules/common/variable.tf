@@ -8,13 +8,13 @@ variable "name" {
 variable "access_key" {
     description = "Name"
     type = string
-    default = "AKIA5SLG4Q6YBVAQXYW4"
+    default = "AKIA4ELQEF2RSUHZRMXY"
 }
 
 variable "secret_key" {
     description = "Name"
     type = string
-    default = "lR7M1dhNO0fAf3V68SIwvwsru+He7a7vFQ09edWg"
+    default = "4bHe/YY2Jba7itQanF6JlCOgcAQTRCju1RjEVfWY"
 }
 
 variable "Environment" {
@@ -54,14 +54,14 @@ variable "Private_subnet_AZS" {
     default = ["us-east-1a", "us-east-1b"]
 }
 
-# variable "Database_subnet_CIDR_block" {
-#     description = "Database subnet cidr range"
-#     type = list(string)
-#     default = []
-# }
+variable "Database_subnet_CIDR_block" {
+    description = "Database subnet cidr range"
+    type = list(string)
+    default = ["10.20.5.0/24", "10.20.6.0/24"]
+}
 
-# variable "Database_subnet_AZS" {
-#     description = "Database subnet AZS"
-#     type = list(string)
-#     default = []
-# }
+variable "Database_subnet_AZS" {
+    description = "Database subnet AZS"
+    type = list(string)
+    default = ["us-east-1a", "us-east-1b"]
+}

@@ -43,14 +43,14 @@ variable "Private_subnet_AZS" {
     default = ["us-east-1a", "us-east-1b"]
 }
 
-variable "Database_subnet_CIDR_block" {
-    description = "Database subnet cidr range"
-    type = list(string)
-    default = ["10.10.5.0/24", "10.10.6.0/24"]
-}
+# variable "Database_subnet_CIDR_block" {
+#     description = "Database subnet cidr range"
+#     type = list(string)
+#     default = ["10.10.5.0/24", "10.10.6.0/24"]
+# }
 
-variable "Database_subnet_AZS" {
-    description = "Database subnet AZS"
-    type = list(string)
-    default = ["us-east-1a", "us-east-1b"]
-}
+# variable "Database_subnet_AZS" {
+#     description = "Database subnet AZS"
+#     type = list(string)
+#     default = ["us-east-1a", "us-east-1b"]
+# }
