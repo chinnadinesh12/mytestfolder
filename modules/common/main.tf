@@ -1,12 +1,12 @@
 
 # S3 Backup for .tfstate #
-terraform {
-  backend "s3" {
-    bucket = "vaibhav-bucket01"
-    key    = "common/terraform.tfstate"
-    region = "us-east-1"
-  }
-}
+#terraform {
+#  backend "s3" {
+#    bucket = "vaibhav-bucket01"
+#    key    = "common/terraform.tfstate"
+#    region = "us-east-1"
+#  }
+#}
 
 # Create VPC #
 resource "aws_vpc" "office_vpc" {
