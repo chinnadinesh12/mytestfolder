@@ -2,7 +2,7 @@
 # S3 Backup for .tfstate #
 terraform {
   backend "s3" {
-    bucket = "vaibhav-bucket01"
+    bucket = "vaibhav-bucket02"
     key    = "common/terraform.tfstate"
     region = "us-east-1"
   }
@@ -43,6 +43,7 @@ resource "aws_subnet" "Public-subnet" {
 
   tags = merge(
     {
+      Tier        =  "Public"
       Name        = "${var.name}-Public-subnet"
       Environment = "${var.Environment}"
     }
@@ -58,6 +59,7 @@ resource "aws_subnet" "Private-subnet" {
 
   tags = merge(
     {
+      Tier        =  "Private"
       Name        = "${var.name}-Private-subnet"
       Environment = "${var.Environment}"
     }
@@ -110,7 +112,7 @@ resource "aws_route_table" "Private_rt" {
   )
 }
 
-# create Route Table and associate subnets [Public Subnets] #
+#create Route Table and associate subnets [Public Subnets] #
 
 resource "aws_route_table_association" "public_rt" {
   count          = length(var.Public_subnet_CIDR_block)
@@ -119,7 +121,7 @@ resource "aws_route_table_association" "public_rt" {
 }
 
 
-# create Route Table and associate subnets [Private Subnets] #
+#create Route Table and associate subnets [Private Subnets] #
 
 resource "aws_route_table_association" "private_rt" {
   count          = length(var.Private_subnet_CIDR_block)
@@ -127,8 +129,8 @@ resource "aws_route_table_association" "private_rt" {
   route_table_id = aws_route_table.Private_rt.id
 }
 
-## till hear working ##
-##################################################################################################
+# till hear working ##
+#################################################################################################
 
 resource "aws_db_subnet_group" "Database-group" {
   name       = "main"
@@ -142,7 +144,7 @@ resource "aws_db_subnet_group" "Database-group" {
   )
 }
 
-# Create an NAT gateway to give our private subnet access the outside world 
+# #Create an NAT gateway to give our private subnet access the outside world 
 # resource "aws_eip" "nat" {
 #   vpc = true
 # }

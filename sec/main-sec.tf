@@ -1,7 +1,7 @@
 # S3 Backup for .tfstate #
 terraform {
   backend "s3" {
-    bucket = "vaibhav-tfstate"
+    bucket = "vaibhav-bucket02"
     key    = "sg/terraform.tfstate"
     region = "us-east-1"
   }
@@ -11,7 +11,7 @@ terraform {
 data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
-    bucket = "vaibhav-tfstate"
+    bucket = "vaibhav-bucket02"
     key    = "common/terraform.tfstate"
     region = "us-east-1"
   }

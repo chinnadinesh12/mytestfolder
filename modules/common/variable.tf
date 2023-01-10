@@ -1,45 +1,45 @@
 
 variable "name" {
-    description = "Name"
-    type = string
-    default = "myoffice"
+  description = "Name"
+  type        = string
+  default     = "myoffice"
 }
 
 variable "access_key" {
-    description = "Name"
-    type = string
-    default = "AKIA4ELQEF2RSUHZRMXY"
+  description = "Name"
+  type        = string
+  default     = "AKIA4ELQEF2RSUHZRMXY"
 }
 
 variable "secret_key" {
-    description = "Name"
-    type = string
-    default = "4bHe/YY2Jba7itQanF6JlCOgcAQTRCju1RjEVfWY"
+  description = "Name"
+  type        = string
+  default     = "4bHe/YY2Jba7itQanF6JlCOgcAQTRCju1RjEVfWY"
 }
 
 variable "Environment" {
-    description = "working ENV"
-    type = string
-    default = "test"
+  description = "working ENV"
+  type        = string
+  default     = "test"
 }
 
 variable "cidr_block" {
-    description = "CIDR range"
-    type = string
-    default = "10.20.0.0/16"
+  description = "CIDR range"
+  type        = string
+  default     = "10.20.0.0/16"
 }
 
 
 variable "Public_subnet_CIDR_block" {
-    description = "public subnet cidr range"
-    type = list(string)
-    default =  ["10.20.1.0/24", "10.20.2.0/24"]
+  description = "public subnet cidr range"
+  type        = list(string)
+  default     = ["10.20.1.0/24","10.20.2.0/24"]
 }
 
 variable "Public_subnet_AZS" {
-    description = "public subnet AZS"
-    type = list(string)
-    default = ["us-east-1a", "us-east-1b"]
+  description = "public subnet AZS"
+  type        = list(string)
+  default     = ["us-east-1a","us-east-1b"]
 }
 
 variable "Private_subnet_CIDR_block" {
@@ -65,3 +65,4 @@ variable "Database_subnet_AZS" {
     type = list(string)
     default = ["us-east-1a", "us-east-1b"]
 }
+
