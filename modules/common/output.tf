@@ -1,8 +1,8 @@
-output "vpc_id" {
+output "vpc_id_02" { #(remove -02)
   value = aws_vpc.office_vpc.id
 }
 
-output "vpc_cidr_block" {
+output "vpc_cidr_block_02" { #(remove -02)
   value = aws_vpc.office_vpc.cidr_block
 }
 
@@ -15,27 +15,27 @@ output "Public-subnet" {
 }
 
 
-output "Private-subnet" {
-    value = aws_subnet.Private-subnet[*].id
-}
+# output "Private-subnet" {
+#     value = aws_subnet.Private-subnet[*].id
+# }
 
-output "Database-subnet" {
-    value = aws_subnet.Database-subnet[*].id
-}
+# output "Database-subnet" {
+#     value = aws_subnet.Database-subnet[*].id
+# }
 
 output "aws_Public_rt" {
     value = aws_route_table.Public_rt.id
 }
 
-output "aws_Private_rt" {
-    value = aws_route_table.Private_rt.id
-}
+# output "aws_Private_rt" {
+#     value = aws_route_table.Private_rt.id
+# }
 
-######################################################
+# ######################################################
 
-output "aws_Database-group" {
-  value = aws_db_subnet_group.Database-group.id
-}
+# output "aws_Database-group" {
+#   value = aws_db_subnet_group.Database-group.id
+# }
 
 # output "aws_nat_eip" {
 #   value = aws_eip.nat.id

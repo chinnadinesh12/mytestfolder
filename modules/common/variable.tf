@@ -2,7 +2,7 @@
 variable "name" {
   description = "Name"
   type        = string
-  default     = "myoffice"
+  default     = "myoffice-02" #( remove -02)
 }
 
 variable "access_key" {
@@ -20,7 +20,7 @@ variable "secret_key" {
 variable "Environment" {
   description = "working ENV"
   type        = string
-  default     = "test"
+  default     = "prod" #(test)
 }
 
 variable "cidr_block" {

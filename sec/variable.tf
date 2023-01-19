@@ -3,3 +3,4 @@ variable "name" {
     type = string
     default = "myoffice"
 }
+

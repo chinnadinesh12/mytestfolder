@@ -5,7 +5,7 @@ variable "ami" {
 
 variable "ec2_count" {
   description = "ec2 intance count"
-  default     = "1"
+  default     = "2"
 }
 
 variable "private_key" {
@@ -16,13 +16,13 @@ variable "private_key" {
 variable "availability_zone" {
   description = "Ec2 Availibility Zones"
   type        = list(string)
-  default     = ["us-east-1a"]
+  default     = ["us-east-1a","us-east-1b"]
 }
 
 variable "subnet_id" {
   description = "Ec2 subnet_id"
   type        = list(string)
-  default     = ["subnet-0a934b37f8dd356dd"]
+  default     = ["subnet-0a934b37f8dd356dd","subnet-057aa33505eba4d52"]
 }
 
 variable "instance_type" {
@@ -32,13 +32,13 @@ variable "instance_type" {
 
 variable "name" {
   description = "name of the ec2"
-  default     = ""
+  default     = "test-ec2"
 }
 
 
 variable "Environment" {
   description = "env name"
-  default     = ""
+  default     = "prod"
 }
 
 
