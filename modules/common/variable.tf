@@ -8,13 +8,13 @@ variable "name" {
 variable "access_key" {
   description = "Name"
   type        = string
-  default     = "AKIA4ELQEF2RSUHZRMXY"
+  default     = "AKIY"
 }
 
 variable "secret_key" {
   description = "Name"
   type        = string
-  default     = "4bHe/YY2Jba7itQanF6JlCOgcAQTRCju1RjEVfWY"
+  default     = "4bHe"
 }
 
 variable "Environment" {
