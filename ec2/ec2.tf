@@ -35,7 +35,7 @@ resource "aws_instance" "EC2Instance" {
     key_name = var.private_key
     availability_zone = element(var.availability_zone, count.index)
     tenancy = "default"
-    subnet_id = element(var.subnet_id, count.index)
+    subnet_id = element(var.subnet_id, count.index) # element(data.terraform_remote_state.vpc_subnet_ids.outputs.subnet_ids, count.index)
     ebs_optimized = false
     vpc_security_group_ids = [data.terraform_remote_state.sg.outputs.sg_id]
     source_dest_check = true
